@@ -41,9 +41,12 @@ fi
 
 mkdir -p "$PROBLEM_DIR"
 
+# 생성된 디렉토리로 이동
+cd "$PROBLEM_DIR"
+
 # 언어별 메인 파일 생성
 if [ "$LANG" = "cpp" ]; then
-cat > "$PROBLEM_DIR/$MAIN_FILE" << 'EOF'
+cat > "$MAIN_FILE" << 'EOF'
 #include <iostream>
 using namespace std;
 
@@ -53,7 +56,7 @@ int main() {
 }
 EOF
 elif [ "$LANG" = "py" ]; then
-cat > "$PROBLEM_DIR/$MAIN_FILE" << 'EOF'
+cat > "$MAIN_FILE" << 'EOF'
 # TODO: 문제 풀이 코드 작성
 if __name__ == "__main__":
     pass
@@ -62,9 +65,9 @@ fi
 
 # Makefile (cpp만)
 if [ "$LANG" = "cpp" ]; then
-cat > "$PROBLEM_DIR/Makefile" << 'EOF'
+cat > "Makefile" << 'EOF'
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -O2
+CXXFLAGS = -std=c++17 -Wall -O2
 TARGET = main
 SOURCE = main.cpp
 
@@ -101,13 +104,13 @@ EOF
 fi
 
 # input1.txt, expected1.txt 기본 생성
-cat > "$PROBLEM_DIR/input1.txt" << 'EOF'
+cat > "input1.txt" << 'EOF'
 EOF
-cat > "$PROBLEM_DIR/expected1.txt" << 'EOF'
+cat > "expected1.txt" << 'EOF'
 EOF
 
 # README.md 생성
-cat > "$PROBLEM_DIR/README.md" << EOF
+cat > "README.md" << EOF
 # 문제 ${PROBLEM_NUMBER} (${LANG})
 
 ## 사용법
@@ -133,4 +136,6 @@ echo "- input1.txt, expected1.txt (테스트케이스 확장 가능)"
 echo "- README.md"
 if [ "$LANG" = "cpp" ]; then
   echo "- Makefile"
-fi 
+fi
+echo ""
+echo "�� 현재 디렉토리: $(pwd)" 
