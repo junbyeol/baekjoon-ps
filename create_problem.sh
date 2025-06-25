@@ -67,7 +67,7 @@ fi
 if [ "$LANG" = "cpp" ]; then
 cat > "Makefile" << 'EOF'
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -O2
+CXXFLAGS = -std=c++20 -Wall -O2
 TARGET = main
 SOURCE = main.cpp
 
