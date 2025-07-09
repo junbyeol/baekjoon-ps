@@ -8,7 +8,7 @@
 ```bash
 ./create_problem.sh <문제번호>
 ```
-예시: `./create_problem.sh 1000`
+예시: `source ./create_problem.sh 1000 cpp`
 
 ### 2. 문제 풀이
 ```bash
@@ -80,8 +80,3 @@ int main() {
 - C++ 컴파일러 (g++)
 - Make
 - Bash shell
-
-## 📚 문제 목록
-
-- [ ] 1000번: A+B
-- [ ] 추가 예정...
