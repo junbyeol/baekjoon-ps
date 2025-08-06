@@ -51,6 +51,9 @@ cat > "$MAIN_FILE" << 'EOF'
 using namespace std;
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     // TODO: 문제 풀이 코드 작성
     return 0;
 }
