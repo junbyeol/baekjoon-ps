@@ -12,12 +12,6 @@ fi
 PROBLEM_NUMBER=$1
 LANG=$2
 
-# 문제 번호가 4-5자리 숫자인지 확인
-if ! [[ $PROBLEM_NUMBER =~ ^[0-9]{4,5}$ ]]; then
-    echo "오류: 문제 번호는 4-5자리 숫자여야 합니다."
-    exit 1
-fi
-
 # 언어별 메인 파일명 및 템플릿
 case $LANG in
     cpp)
